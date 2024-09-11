@@ -1,8 +1,10 @@
-import { faker } from "@faker-js/faker";
+import Chance from "chance";  // Import Chance
 import { useCallback, useState } from "react";
 
+const chance = new Chance();  // Initialize Chance instance
+
 const generateWords = (count: number) => {
-  return faker.random.words(count).toLowerCase();
+  return chance.sentence({ words: count }).toLowerCase();  // Use chance for word generation
 };
 
 const useWords = (count: number) => {
