@@ -87,7 +87,7 @@ src/
 ├── index.tsx
 └── index.css
 ```
-#Test TypingGhost
+###Test TypingGhost
 
 https://typing-ghost.vercel.app/
 
