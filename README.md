@@ -11,6 +11,7 @@ Typing Ghost is an advanced typing platform designed to help users improve their
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+- [Live Demo](#live-demo)
 
 ## **Features**
 - Typing tests that measure typing speed and accuracy.
@@ -36,8 +37,8 @@ Make sure you have the following installed:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/AbhishekS04/Typing_ghost.git
-   cd Typing_ghost
+   git clone https://github.com/your-username/typing-ghost.git
+   cd typing-ghost
    ```
 
 2. **Install the dependencies**:
@@ -53,7 +54,6 @@ Make sure you have the following installed:
 3. **Start the application**:
    ```bash
    npm start
-   npm start dev
    ```
    The app should now be running on `http://localhost:3000/`.
 
@@ -87,9 +87,6 @@ src/
 ├── index.tsx
 └── index.css
 ```
-
-Live Demo
-You can try Typing Ghost live at: https://typing-ghost.vercel.app/
 
 ### Key Files:
 - **App.tsx**: The root of your app where all components are combined.
@@ -127,6 +124,10 @@ Typing Ghost is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-**Happy Typing with Typing Ghost!**
+## **Live Demo**
+
+You can try Typing Ghost live at: [https://typing-ghost.vercel.app/](https://typing-ghost.vercel.app/)
 
 ---
+
+**Happy Typing with Typing Ghost!**
