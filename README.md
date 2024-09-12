@@ -53,6 +53,7 @@ Make sure you have the following installed:
 3. **Start the application**:
    ```bash
    npm start
+   npm start dev
    ```
    The app should now be running on `http://localhost:3000/`.
 
