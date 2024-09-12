@@ -1,10 +1,6 @@
-Here's your detailed `README.md` file for the **Typing Ghost** project:
-
----
-
 # **Typing Ghost**
 
-Typing Ghost is an advanced typing platform designed to help users improve their typing speed and accuracy. The app features user authentication through Clerk, a typing test to assess skills, and tracking of individual user performance over time.
+Typing Ghost is an advanced typing platform designed to help users improve their typing speed and accuracy. The app features a typing test to assess typing skills and provides feedback on speed and accuracy.
 
 ## **Table of Contents**
 - [Features](#features)
@@ -13,35 +9,28 @@ Typing Ghost is an advanced typing platform designed to help users improve their
 - [Installation](#installation)
 - [Folder Structure](#folder-structure)
 - [Usage](#usage)
-- [Clerk Authentication](#clerk-authentication)
-- [Typing Activity Tracking](#typing-activity-tracking)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## **Features**
-- User authentication using Clerk.
-- Typing tests that provide feedback on speed and accuracy.
-- User-specific typing history and performance tracking.
+- Typing tests that measure typing speed and accuracy.
 - Real-time feedback on typing accuracy.
 - Fully responsive design for mobile and desktop.
-  
+
 ## **Tech Stack**
 - **Frontend**: React, TypeScript
-- **Authentication**: Clerk
 - **Styling**: Tailwind CSS
 - **State Management**: React Hooks
-- **Data Persistence**: LocalStorage (or database-ready)
 - **Build/Bundle**: Vite or React Scripts
 
 ## **Getting Started**
 
-To get Typing Ghost up and running on your local machine, follow these steps.
+To get Typing Ghost running on your local machine, follow the steps below.
 
 ### **Prerequisites**
 Make sure you have the following installed:
 - Node.js (v14+)
 - npm or yarn
-- Clerk account for authentication (sign up at [Clerk](https://clerk.dev))
 
 ### **Installation**
 
@@ -61,15 +50,7 @@ Make sure you have the following installed:
    yarn install
    ```
 
-3. **Set up Clerk**:
-   - Sign up on [Clerk](https://clerk.dev) and create a new project.
-   - Copy your **Frontend API key** from your Clerk project.
-   - Update the `src/App.tsx` with your Clerk Frontend API key:
-     ```tsx
-     const clerkFrontendApi = "your_clerk_frontend_api";
-     ```
-
-4. **Start the application**:
+3. **Start the application**:
    ```bash
    npm start
    ```
@@ -94,7 +75,6 @@ src/
 │   ├── RestartButton.tsx
 │   ├── Results.tsx
 │   ├── TypingTest.tsx
-│   └── UserTypings.tsx
 ├── hooks/
 │   ├── useCountdown.ts
 │   ├── useEngine.ts
@@ -108,74 +88,19 @@ src/
 ```
 
 ### Key Files:
-- **App.tsx**: The main entry point of your app where Clerk authentication is initialized.
-- **components/**: Contains the main UI components for typing tests, history, results, etc.
-- **hooks/**: Custom hooks for handling typing logic like countdown, word management, and input handling.
-- **utils/helpers.ts**: Helper functions for saving and retrieving user typing history.
+- **App.tsx**: The root of your app where all components are combined.
+- **components/**: Contains the main components for the typing test, generated words, restart button, and results.
+- **hooks/**: Custom hooks for handling typing logic such as countdown, word generation, and typing input.
+- **utils/helpers.ts**: Helper functions to support the main functionality.
 
 ---
 
 ## **Usage**
 
-1. **Sign in or sign up** using Clerk's authentication system.
-2. Once logged in, users can start the typing test to assess their typing speed and accuracy.
-3. After completing the test, users will see their accuracy and typing speed.
-4. The typing history is saved and shown in the "Typing History" section under **User Typings**.
-
----
-
-## **Clerk Authentication**
-
-Typing Ghost uses Clerk for secure user authentication.
-
-### Steps:
-1. **Sign up for Clerk** at [Clerk.dev](https://clerk.dev).
-2. **Set up Clerk in your app**:
-   - Wrap your app with the `ClerkProvider`.
-   - Use `SignedIn` and `SignedOut` components to protect routes.
-   - Clerk handles user sign-in, sign-up, and profile management automatically.
-
-Here’s an example of integrating Clerk in `App.tsx`:
-```tsx
-<ClerkProvider frontendApi={clerkFrontendApi}>
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<SignedIn><Home /></SignedIn>} />
-      <Route path="/sign-in" element={<RedirectToSignIn />} />
-    </Routes>
-  </BrowserRouter>
-</ClerkProvider>
-```
-
----
-
-## **Typing Activity Tracking**
-
-Typing Ghost tracks user typing performance, including accuracy and the completion date of tests.
-
-### How it Works:
-- When a user finishes a typing test, the result (including accuracy and date) is stored.
-- Data is saved in `localStorage` (for now), but it can be extended to store data in a backend or database.
-- The **User Typings** component fetches and displays the typing history of the currently logged-in user.
-
-Here’s an example of saving typing activity:
-
-In `helpers.ts`:
-```ts
-export const saveTypingActivity = (userId: string, accuracy: number) => {
-  const typingData = {
-    date: new Date().toISOString(),
-    accuracy,
-  };
-  const existingHistory = JSON.parse(localStorage.getItem(userId) || "[]");
-  existingHistory.push(typingData);
-  localStorage.setItem(userId, JSON.stringify(existingHistory));
-};
-
-export const getUserTypingHistory = (userId: string) => {
-  return JSON.parse(localStorage.getItem(userId) || "[]");
-};
-```
+1. Open the application.
+2. The **TypingTest** component will generate a random set of words for users to type.
+3. As users type, real-time feedback on typing speed and accuracy is displayed.
+4. Users can reset the typing test using the **RestartButton** component.
 
 ---
 
@@ -201,4 +126,3 @@ Typing Ghost is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 **Happy Typing with Typing Ghost!**
 
 ---
-
