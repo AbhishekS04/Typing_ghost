@@ -87,9 +87,9 @@ src/
 ├── index.tsx
 └── index.css
 ```
-###Test TypingGhost
 
-https://typing-ghost.vercel.app/
+Live Demo
+You can try Typing Ghost live at: https://typing-ghost.vercel.app/
 
 ### Key Files:
 - **App.tsx**: The root of your app where all components are combined.
