@@ -37,8 +37,8 @@ Make sure you have the following installed:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/typing-ghost.git
-   cd typing-ghost
+   git clone https://github.com/AbhishekS04/Typing_ghost.git
+   cd Typing_ghost
    ```
 
 2. **Install the dependencies**:
